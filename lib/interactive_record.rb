@@ -73,7 +73,7 @@ class InteractiveRecord
       LIMIT 1
     SQL
     row = DB[:conn].execute(sql)
-    
+
   end
 
 end
