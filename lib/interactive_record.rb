@@ -6,8 +6,8 @@ class InteractiveRecord
 
   def initialize(options = {})
     options.each do |key, value|
-      binding.pry
-      self.send(("#{key}="),value)
+      if key != :id
+        self.send(("#{key}="),value)
     end
   end
 
