@@ -7,7 +7,7 @@ class InteractiveRecord
   def initialize(options = {})
     options.each do |property, value|
 
-      self.send("#{property}=", value)
+      self.send("#{property}=", value).delete_if {|col| col.name == "id"}
     end
   end
 
