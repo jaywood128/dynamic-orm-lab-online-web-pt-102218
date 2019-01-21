@@ -7,7 +7,7 @@ class InteractiveRecord
   def initialize(options = {})
     options.each do |key, value|
       binding.pry
-      self.send("#{key}=", value).delete_if {|property| property.name == "id"}
+      self.send(("#{key}="),value)
     end
   end
 
