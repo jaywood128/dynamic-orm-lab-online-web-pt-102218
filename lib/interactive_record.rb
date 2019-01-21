@@ -8,6 +8,7 @@ class InteractiveRecord
     options.each do |key, value|
       if key != :id
         self.send(("#{key}="),value)
+      end
     end
   end
 
