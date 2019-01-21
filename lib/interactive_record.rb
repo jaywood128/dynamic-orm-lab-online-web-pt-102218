@@ -4,13 +4,7 @@ require 'pry'
 
 class InteractiveRecord
 
-  def initialize(options = {})
-    options.each do |key, value|
-      if key != :id
-        self.send(("#{key}="),value)
-      end
-    end
-  end
+
 
   def self.table_name
     self.to_s.downcase.pluralize
@@ -29,6 +23,12 @@ class InteractiveRecord
     end
     column_names.compact
 
+  end
+
+  def initialize(options = {}) #pass in a hash
+    options.each do |key,value|
+      self.send(("#{key}="),value)
+    end
   end
 
 end
