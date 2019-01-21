@@ -36,8 +36,10 @@ class InteractiveRecord
   end
 
   def self.table_name_for_insert
-    sql = <<-SQL 
+    sql = <<-SQL
       INSERT TABLE #{self.table_name}
+      SQL
+    DB[:conn].execute(sql)
   end
 
 end
